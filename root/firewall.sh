@@ -122,6 +122,11 @@ done
 iptables -A INPUT -s 127.0.0.1 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+
+
+iptables -A INPUT -p tcp -m tcp --dport 43004 -j ACCEPT
+iptables -A INPUT -p udp -m udp --dport 43004 -j ACCEPT
+
 iptables -A INPUT -p tcp -m tcp -m conntrack -m multiport --ctstate NEW ! --dports "$SSH_PORT" -j DROP
 iptables -A INPUT -p udp -m udp --dport 8301 -j ACCEPT # russky block ranked block
 iptables -A INPUT -p udp -m udp --dport 6666 -j ACCEPT # russyblock discord
