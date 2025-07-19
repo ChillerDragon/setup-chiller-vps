@@ -124,6 +124,9 @@ iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
 
 
+iptables -A INPUT -p tcp -m tcp --dport 43002 -j ACCEPT
+iptables -A INPUT -p udp -m udp --dport 43002 -j ACCEPT
+
 iptables -A INPUT -p tcp -m tcp --dport 43004 -j ACCEPT
 iptables -A INPUT -p udp -m udp --dport 43004 -j ACCEPT
 
