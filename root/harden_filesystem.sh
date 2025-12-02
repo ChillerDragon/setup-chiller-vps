@@ -44,6 +44,9 @@ shopt -u extglob
 chmod o-r /etc/.*
 chmod o-x /etc/*/
 
+printf '[*] allow admin to read /etc/sensors3.conf for htop\n'
+chown root:admin /etc/sensors3.conf
+
 printf '[*] open /etc/apt for _apt user\n'
 chmod o+x /etc/apt
 chmod o+r /etc/apt
