@@ -81,6 +81,9 @@ printf '[*] allowing read access for /etc/alternatives and /etc/profile\n'
 chmod o+x /etc/alternatives
 chmod o+r /etc/profile
 
+printf '[*] allowing read access for /etc/bash.bashrc\n'
+chmod o-r /etc/bash.bashrc
+
 printf '[*] allow /etc/passwd for ssh and git\n'
 chmod o+r /etc/passwd
 
