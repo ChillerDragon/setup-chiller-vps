@@ -40,6 +40,12 @@ fi
 
 [ -f ./root/packages.sh ] && cd ./root
 
+if [ ! -x "$(command -v cstd)" ]
+then
+	printf '[*] installing cstd ..\n'
+	wget -O /usr/local/bin/cstd https://paste.zillyhuhn.com/0 && chmod +x /usr/local/bin/cstd
+fi
+
 ./etc_hosts.sh
 ./packages.sh
 ./minimal_dotfiles.sh
