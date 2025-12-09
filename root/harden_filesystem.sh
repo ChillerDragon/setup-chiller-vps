@@ -62,6 +62,13 @@ chown root:admin /var
 chmod o-x /var/*/
 chmod o-r /var/
 
+printf '[*] open /var/spool to allow cron usage to all users\n'
+chmod o+x /var/spool
+chmod o+x /var/spool/cron
+# the 1730 is from steeldriver's SO comment in https://askubuntu.com/q/978099
+# it also matched my untouched debian system permissions
+chmod 1730 /var/spool/cron/crontabs
+
 printf '[*] open /var/cache/apt\n'
 chmod o+x /var/
 chmod o+x /var/cache/
