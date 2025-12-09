@@ -33,8 +33,6 @@ chown root:admin /home
 
 printf '[*] harden /run\n'
 chown root:admin /run
-chmod g+x /run
-chmod o+x /run
 
 printf '[*] harden /etc\n'
 chmod o-r /etc
@@ -61,6 +59,12 @@ chown root:admin /var
 # they have to be whitelisted for the users
 chmod o-x /var/*/
 chmod o-r /var/
+
+printf '[*] open /run for screen\n'
+# this has to happen AFTER harden of /var/*/
+# because there can be symlinks of /run and /var/run
+chmod g+x /run
+chmod o+x /run
 
 printf '[*] open /var/spool to allow cron usage to all users\n'
 chmod o+x /var/spool
