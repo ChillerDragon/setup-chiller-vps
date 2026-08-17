@@ -142,6 +142,7 @@ iptables -A INPUT -p udp -m udp --dport 8308 -j ACCEPT # zCatch
 iptables -A INPUT -p udp -m udp --dport 8704 -j ACCEPT
 iptables -A INPUT -p udp -m udp --dport 8706 -j ACCEPT
 iptables -A INPUT -p udp -m udp --dport 8707 -j ACCEPT
+iptables -A INPUT -p udp -m udp --dport 8708 -j ACCEPT
 iptables -A INPUT -p udp -m udp --dport 8709 -j ACCEPT
 iptables -A INPUT -p udp -m udp --dport 53 -j ACCEPT
 iptables -A INPUT -p udp -m udp --sport 53 -j ACCEPT
